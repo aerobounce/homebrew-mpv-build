@@ -3,6 +3,8 @@ class Mpv < Formula
   homepage "https://mpv.io"
   version "HEAD"
   head "https://github.com/mpv-player/mpv.git"
+  
+  bottle :unneeded
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
