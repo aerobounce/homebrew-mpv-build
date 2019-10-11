@@ -2,6 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   version "HEAD"
+  revision 1
   head "https://github.com/mpv-player/mpv.git"
   
   bottle :unneeded
