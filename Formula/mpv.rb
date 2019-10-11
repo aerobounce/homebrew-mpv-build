@@ -10,7 +10,7 @@ class Mpv < Formula
   depends_on "pkg-config" => :build
   depends_on "python" => :build
 
-  depends_on "ffmpeg"
+  depends_on "aerobounce/ffmpeg-fdk-aac/ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libass"
