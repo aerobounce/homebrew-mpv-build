@@ -2,9 +2,9 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   version "mpv-HEAD"
-  revision 2
+  revision 3
   head "https://github.com/mpv-player/mpv.git"
-  
+
   bottle :unneeded
 
   depends_on "docutils" => :build
