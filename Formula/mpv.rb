@@ -36,6 +36,7 @@ class Mpv < Formula
       --enable-lua
       --enable-libarchive
       --enable-uchardet
+      --disable-macos-touchbar
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
