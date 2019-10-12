@@ -40,7 +40,6 @@ class Mpv < Formula
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
-      --docdir=#{doc}
     ]
 
     system "./bootstrap.py"
