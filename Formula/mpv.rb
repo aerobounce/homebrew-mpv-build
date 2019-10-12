@@ -31,7 +31,6 @@ class Mpv < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --enable-html-build
       --enable-javascript
       --enable-libmpv-shared
       --enable-lua
