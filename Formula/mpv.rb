@@ -1,8 +1,9 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  version "mpv-HEAD"
-  revision 3
+  url "https://github.com/mpv-player/mpv/archive/v0.30.0.tar.gz"
+  version "aerobounce-0.30.0"
+  sha256 "33a1bcb7e74ff17f070e754c15c52228cf44f2cefbfd8f34886ae81df214ca35"
   head "https://github.com/mpv-player/mpv.git"
 
   bottle :unneeded
