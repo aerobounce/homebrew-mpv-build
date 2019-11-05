@@ -1,4 +1,4 @@
-# homebrew-mpv-HEAD
+# homebrew-mpv-build
 Customized formula of mpv. Build only (no bottles).
 
 # Install
