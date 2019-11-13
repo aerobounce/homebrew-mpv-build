@@ -2,8 +2,8 @@
 Customized formula of mpv. Build only (no bottles).
 
 # Install
-- `brew install aerobounce/mpv-HEAD/mpv`
-- `brew install --HEAD aerobounce/mpv-HEAD/mpv`
+- `brew install aerobounce/mpv-build/mpv`
+- HEAD: `brew install --HEAD aerobounce/mpv-build/mpv`
 
 # Why
 - mpv formula has been removed from homebrew-core.
