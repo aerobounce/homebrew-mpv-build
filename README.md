@@ -5,6 +5,9 @@ Customized formula of mpv. Build only (no bottles).
 - `brew install aerobounce/mpv-build/mpv`
 - HEAD: `brew install --HEAD aerobounce/mpv-build/mpv`
 
+# Todo
+- [ ] Option to use `ffmpeg` instead of `aerobounce/ffmpeg-fdk-aac/ffmpeg`
+
 # Differences from Brew core's mpv Formula
 - No bottles. Build only.
 - Depends on `aerobounce/ffmpeg-fdk-aac/ffmpeg` instead of `ffmpeg`.
