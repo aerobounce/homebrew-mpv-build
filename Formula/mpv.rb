@@ -9,6 +9,7 @@ class Mpv < Formula
   bottle :unneeded
 
   option "with-ffmpeg", "Use homebrew-core's ffmpeg instead of ffmpeg-fdk-aac"
+  option "with-touchbar", "Enables macos-touchbar flag"
 
   if build.with? "ffmpeg"
     depends_on "ffmpeg"
@@ -49,6 +50,10 @@ class Mpv < Formula
       --datadir=#{pkgshare}
       --mandir=#{man}
     ]
+
+    if build.with? "touchbar"
+      args.delete("--disable-macos-touchbar")
+    end
 
     system "./bootstrap.py"
     system "python3", "waf", "configure", *args
