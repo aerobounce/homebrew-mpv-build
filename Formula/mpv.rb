@@ -8,11 +8,18 @@ class Mpv < Formula
 
   bottle :unneeded
 
+  option "with-ffmpeg", "Use homebrew-core's ffmpeg instead of ffmpeg-fdk-aac"
+
+  if build.with? "ffmpeg"
+    depends_on "ffmpeg"
+  else
+    depends_on "aerobounce/ffmpeg-fdk-aac/ffmpeg"
+  end
+
   depends_on "docutils"
   depends_on "pkg-config"
   depends_on "python"
 
-  depends_on "aerobounce/ffmpeg-fdk-aac/ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libass"
