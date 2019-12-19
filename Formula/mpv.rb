@@ -8,9 +8,9 @@ class Mpv < Formula
 
   bottle :unneeded
 
-  depends_on "docutils" => :build
-  depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "docutils"
+  depends_on "pkg-config"
+  depends_on "python"
 
   depends_on "aerobounce/ffmpeg-fdk-aac/ffmpeg"
   depends_on "jpeg"
