@@ -19,6 +19,7 @@ brew install aerobounce/mpv-build/mpv
 
 # Todo
 - [x] Option to use `ffmpeg` instead of `aerobounce/ffmpeg-fdk-aac/ffmpeg`
+- [ ] Apply patches to cocoa backend if needed
 
 # Differences from homebrew-core's mpv
 - No bottles, build only.
