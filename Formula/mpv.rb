@@ -5,6 +5,7 @@ class Mpv < Formula
   version "aerobounce-0.30.0"
   sha256 "33a1bcb7e74ff17f070e754c15c52228cf44f2cefbfd8f34886ae81df214ca35"
   head "https://github.com/mpv-player/mpv.git"
+  revision 1
 
   bottle :unneeded
 
