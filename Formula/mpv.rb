@@ -56,7 +56,7 @@ class Mpv < Formula
       args.delete("--disable-macos-touchbar")
     end
 
-    system "./bootstrap.py"
+    system "python3", "./bootstrap.py"
     system "python3", "waf", "configure", *args
     system "python3", "waf", "install"
 
