@@ -1,11 +1,25 @@
-# homebrew-mpv-build
-Personal tap for mpv.\
-Build only.
+# mpv-build
+Personal tap for mpv with options. Kept maintained.\
+Build only.\
+**Building mpv is quite lightweight than you think. It's very well structured project.**
+
 
 # Install
+- Default. With `aerobounce/ffmpeg-fdk-aac/ffmpeg` build:
 ```
 brew install aerobounce/mpv-build/mpv
 ```
+
+- With homebrew-core's `ffmpeg` bottle:
+```
+brew install aerobounce/mpv-build/mpv --with-ffmpeg
+```
+
+- With homebrew-core's `ffmpeg` bottle and mpv's `HEAD` build:
+```
+brew install aerobounce/mpv-build/mpv --with-ffmpeg --HEAD
+```
+
 
 # Options
 ```
@@ -17,9 +31,12 @@ brew install aerobounce/mpv-build/mpv
     Install HEAD version
 ```
 
+
 # Todo
 - [x] Option to use `ffmpeg` instead of `aerobounce/ffmpeg-fdk-aac/ffmpeg`
-- [ ] Apply patches to cocoa backend if needed
+- [ ] Add more build options
+- [ ] Apply patches to cocoa backend if needed?
+
 
 # Differences from homebrew-core's mpv
 - No bottles, build only.
@@ -38,9 +55,8 @@ brew install aerobounce/mpv-build/mpv
     - It used to do so. Now not: [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854#discussion_r341953284)
 
 # Why
-- mpv formula has been removed from homebrew-core as of this commit.
+1. mpv formula has been removed from homebrew-core as of this commit.
     - [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179)
-- As of [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854), mpv is back.
-    - Obviously it's better to run a tap as it's completely unpredictable what changes would happen.
-    - **Completely Pointless** to follow somebody else's policy for what you use everyday frequently.
-- **Building mpv is quite lightweight than you think. It's very well structured project!**
+2. As of [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854), mpv is back with some changes.
+    - Now obviously it's better to run a tap as it's completely unpredictable what changes would happen.
+    - **Completely pointless** to follow somebody else's policy for what you use everyday frequently.
