@@ -5,17 +5,17 @@ Build only.\
 
 
 # Install
-- Default. With `aerobounce/ffmpeg-fdk-aac/ffmpeg` build:
+### With `aerobounce/ffmpeg-fdk-aac/ffmpeg` build (Default):
 ```
 brew install aerobounce/mpv-build/mpv
 ```
 
-- With homebrew-core's `ffmpeg` bottle:
+### With homebrew-core's `ffmpeg` bottle:
 ```
 brew install aerobounce/mpv-build/mpv --with-ffmpeg
 ```
 
-- With homebrew-core's `ffmpeg` bottle and mpv's `HEAD` build:
+### With homebrew-core's `ffmpeg` bottle and mpv's `HEAD` build:
 ```
 brew install aerobounce/mpv-build/mpv --with-ffmpeg --HEAD
 ```
@@ -56,7 +56,7 @@ brew install aerobounce/mpv-build/mpv --with-ffmpeg --HEAD
 
 # Why
 1. mpv formula has been removed from homebrew-core as of this commit.
-    - [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179)
+    - [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179) 
 2. As of [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854), mpv is back with some changes.
     - Now obviously it's better to run a tap as it's completely unpredictable what changes would happen.
     - **Completely pointless** to follow somebody else's policy for what you use everyday frequently.
