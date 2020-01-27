@@ -65,6 +65,6 @@ class Mpv < Formula
   end
 
   test do
-    system bin/"mpv", "--ao=null", test_fixtures("test.wav")
+    system (bin / "mpv"), "--ao=null", test_fixtures("test.wav")
   end
 end
