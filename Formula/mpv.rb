@@ -2,25 +2,19 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
-  version "aerobounce-0.32.0"
+  version "0.32.0-aerobounce"
   sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
   head "https://github.com/mpv-player/mpv.git"
 
   bottle :unneeded
 
-  option "with-ffmpeg", "Use homebrew-core's ffmpeg instead of ffmpeg-fdk-aac"
-  option "with-touchbar", "Enables macos-touchbar flag"
-
-  if build.with? "ffmpeg"
-    depends_on "ffmpeg"
-  else
-    depends_on "aerobounce/ffmpeg-fdk-aac/ffmpeg"
-  end
+  option "with-touchbar", "Enables TouchBar module"
 
   depends_on "docutils"
   depends_on "pkg-config"
   depends_on "python"
 
+  depends_on "ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libass"
@@ -40,15 +34,17 @@ class Mpv < Formula
 
     args = %W[
       --prefix=#{prefix}
+      --disable-macos-touchbar
       --enable-javascript
       --enable-libmpv-shared
       --enable-lua
       --enable-libarchive
       --enable-uchardet
-      --disable-macos-touchbar
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
+      --docdir=#{doc}
+      --zshdir=#{zsh_completion}
     ]
 
     if build.with? "touchbar"
@@ -64,6 +60,6 @@ class Mpv < Formula
   end
 
   test do
-    system (bin / "mpv"), "--ao=null", test_fixtures("test.wav")
+    system bin/"mpv", "--ao=null", test_fixtures("test.wav")
   end
 end
