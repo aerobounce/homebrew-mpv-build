@@ -1,7 +1,7 @@
 # mpv-build
 Personal tap for mpv, with some customizations.
 
-### Differences from the original
+### Differences from the original formula
 - Build only
 - **Automatically Installs mpv.app Package**
 - ~~Depends on `aerobounce/ffmpeg-fdk-aac/ffmpeg` instead of `ffmpeg`~~
@@ -18,7 +18,7 @@ brew install aerobounce/mpv-build/mpv
 ```
 
 ## Todo
-- [ ] Add more build options
+- [ ] Add more options
 
 ## Background
 1. mpv.rb was removed for several reasons: [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179)
