@@ -3,6 +3,7 @@ class Mpv < Formula
   homepage "https://mpv.io"
   url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
   version "0.32.0-aerobounce"
+  revision 1
   sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
   head "https://github.com/mpv-player/mpv.git"
 
@@ -12,7 +13,8 @@ class Mpv < Formula
 
   depends_on "docutils"
   depends_on "pkg-config"
-  depends_on "python"
+  depends_on "python@3.8"
+  depends_on :xcode
 
   depends_on "ffmpeg"
   depends_on "jpeg"
@@ -45,17 +47,18 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
+      --lua=51deb
     ]
 
     if build.with? "touchbar"
       args.delete("--disable-macos-touchbar")
     end
 
-    system "python3", "./bootstrap.py"
-    system "python3", "waf", "configure", *args
-    system "python3", "waf", "install"
+    system Formula["python@3.8"].opt_bin/"python3", "bootstrap.py"
+    system Formula["python@3.8"].opt_bin/"python3", "waf", "configure", *args
+    system Formula["python@3.8"].opt_bin/"python3", "waf", "install"
 
-    system "python3", "TOOLS/osxbundle.py", "build/mpv"
+    system Formula["python@3.8"].opt_bin/"python3", "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
   end
 
