@@ -3,7 +3,7 @@ class Mpv < Formula
   homepage "https://mpv.io"
   url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
   version "0.32.0-aerobounce"
-  revision 1
+  revision 2
   sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
   head "https://github.com/mpv-player/mpv.git"
 
@@ -56,10 +56,16 @@ class Mpv < Formula
 
     system Formula["python@3.8"].opt_bin/"python3", "bootstrap.py"
     system Formula["python@3.8"].opt_bin/"python3", "waf", "configure", *args
-    system Formula["python@3.8"].opt_bin/"python3", "waf", "install"
+    system Formula["python@3.8"].opt_bin/"python3", "waf", "build"
 
     system Formula["python@3.8"].opt_bin/"python3", "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
+
+    (bin/"mpv").write <<~EOS
+      #!/bin/bash
+      exec "#{prefix}/mpv.app/Contents/MacOS/mpv" "$@"
+    EOS
+    chmod "+x", bin/"mpv"
   end
 
   test do
