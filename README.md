@@ -1,10 +1,10 @@
-# mpv-build
-Personal tap for mpv, with some customizations.
+<h1 align="center">mpv-build</h1>
+<p align="center">Personal tap for mpv, with some customizations.</p>
 
-#### Differences from the original formula
+### Differences from the original formula
 - Build only
 - **Automatically Installs mpv.app Package**
-- ~~Depends on `aerobounce/ffmpeg-fdk-aac/ffmpeg` instead of `ffmpeg`~~
+- **mpv.app Package and mpv bin doesn't co-exist - bin/mpv invokes bin in mpv.app**
 - Removed Arguments
     - `--enable-html-build`
 - Additional Arguments
@@ -17,9 +17,7 @@ Personal tap for mpv, with some customizations.
 brew install aerobounce/mpv-build/mpv
 ```
 
-### Todo
-- [ ] Add more options
-
 ### Background
-1. mpv.rb was removed for several reasons: [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179)
-2. mpv is back again as of [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854) with some changes - **mpv.app bundle install process has been removed**
+- mpv.rb was removed for several reasons: [mpv: migrate to Homebrew/cask](https://github.com/Homebrew/homebrew-core/commit/41444d526c40b93069b7f0c5414539deb0534179)
+- mpv is back again as of [mpv 0.30 #45854](https://github.com/Homebrew/homebrew-core/pull/45854) with some changes
+  - **mpv.app bundle install process has been removed**
