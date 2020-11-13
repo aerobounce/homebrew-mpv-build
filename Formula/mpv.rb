@@ -3,7 +3,7 @@ class Mpv < Formula
   homepage "https://mpv.io"
   url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
   version "0.32.0-aerobounce"
-  revision 2
+  revision 3
   sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
   head "https://github.com/mpv-player/mpv.git"
 
@@ -13,7 +13,7 @@ class Mpv < Formula
 
   depends_on "docutils"
   depends_on "pkg-config"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on :xcode
 
   depends_on "ffmpeg"
