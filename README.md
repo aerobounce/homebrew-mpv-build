@@ -4,13 +4,11 @@
 ### Differences from the original formula
 - Build only
 - **Automatically Installs mpv.app Package**
-- **mpv.app Package and mpv bin doesn't co-exist - bin/mpv invokes bin in mpv.app**
+- **mpv bin will not be installed - bin/mpv invokes bin in mpv.app**
 - Removed Arguments
     - `--enable-html-build`
-- Additional Arguments
-    - `--disable-macos-touchbar` [mpv/issues/7047](https://github.com/mpv-player/mpv/issues/7047)
-- Custom Options
-    - `--with-touchbar`
+- Custom Option
+    - `--disable-touchbar` [mpv/issues/7047](https://github.com/mpv-player/mpv/issues/7047)
 
 ### Install
 ```
