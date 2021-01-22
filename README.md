@@ -1,14 +1,12 @@
-<h1 align="center">mpv-build</h1>
+<h1 align="center">mpv-build 🛠</h1>
 <p align="center">Personal tap for mpv, with some customizations.</p>
 
 ### Differences from the original formula
 - Build only
-- **Automatically Installs mpv.app Package**
+- ✨ Automatically Installs mpv.app Package 📦
 - **mpv bin will not be installed - bin/mpv invokes bin in mpv.app**
 - Removed Arguments
     - `--enable-html-build`
-- Custom Option
-    - `--disable-touchbar` [mpv/issues/7047](https://github.com/mpv-player/mpv/issues/7047)
 
 ### Install
 ```

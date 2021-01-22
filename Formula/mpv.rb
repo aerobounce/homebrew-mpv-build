@@ -5,11 +5,10 @@ class Mpv < Formula
   version "0.33.0-build"
   sha256 "f1b9baf5dc2eeaf376597c28a6281facf6ed98ff3d567e3955c95bf2459520b4"
   license :cannot_represent
+  revision 1
   head "https://github.com/mpv-player/mpv.git"
 
   bottle :unneeded
-
-  option "disable-touchbar", "Disables TouchBar module"
 
   depends_on "docutils"
   depends_on "pkg-config"
@@ -21,7 +20,7 @@ class Mpv < Formula
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  depends_on "lua@5.1"
+  depends_on "luajit-openresty"
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
@@ -35,6 +34,8 @@ class Mpv < Formula
 
     # libarchive is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    # luajit-openresty is keg-only
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["luajit-openresty"].opt_lib/"pkgconfig"
 
     args = %W[
       --prefix=#{prefix}
@@ -48,12 +49,8 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
-      --lua=51deb
+      --lua=luajit
     ]
-
-    if build.with? "touchbar"
-      args.append("--disable-macos-touchbar")
-    end
 
     system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
     system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
