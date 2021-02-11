@@ -1,16 +1,27 @@
 <h1 align="center">mpv-build 🛠</h1>
 <p align="center">Personal tap for mpv, with some customizations.</p>
 
-### Differences from the original formula
+### Differences from the Original Formula
 - Build only
 - ✨ Automatically Installs mpv.app Package 📦
-- **mpv bin will not be installed - bin/mpv invokes bin in mpv.app**
+- Custom options
+    - `disable-macos-touchbar`
+    - `disable-macos-media-player`
+    - `disable-binary-install`
 - Removed Arguments
     - `--enable-html-build`
 
 ### Install
-```
+```sh
 brew install aerobounce/mpv-build/mpv
+```
+
+### Install with options
+```sh
+brew install --formula aerobounce/homebrew-mpv-build/mpv --with-<OPTION> ...
+
+# Example:
+brew install --formula aerobounce/homebrew-mpv-build/mpv --with-disable-macos-media-player
 ```
 
 ### Background

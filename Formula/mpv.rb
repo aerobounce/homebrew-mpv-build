@@ -10,6 +10,10 @@ class Mpv < Formula
 
   bottle :unneeded
 
+  option "with-disable-macos-touchbar", "disable macOS Touch Bar support"
+  option "with-disable-macos-media-player", "disable macOS Media Player support"
+  option "with-disable-binary-install", "mpv.app will only be installed"
+
   depends_on "docutils"
   depends_on "pkg-config"
   depends_on "python@3.9"
@@ -52,18 +56,31 @@ class Mpv < Formula
       --lua=luajit
     ]
 
+    # Options
+    args << "--disable-macos-touchbar" if build.with? "disable-macos-touchbar"
+    args << "--disable-macos-media-player" if build.with? "disable-macos-media-player"
+
     system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
     system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
-    system Formula["python@3.9"].opt_bin/"python3", "waf", "build"
 
-    system Formula["python@3.9"].opt_bin/"python3", "TOOLS/osxbundle.py", "build/mpv"
-    prefix.install "build/mpv.app"
+    if build.with? "disable-binary-install"
+      system Formula["python@3.9"].opt_bin/"python3", "waf", "build"
+      system Formula["python@3.9"].opt_bin/"python3", "TOOLS/osxbundle.py", "build/mpv"
 
-    (bin/"mpv").write <<~EOS
-      #!/bin/bash
-      exec "#{prefix}/mpv.app/Contents/MacOS/mpv" "$@"
-    EOS
-    chmod "+x", bin/"mpv"
+      prefix.install "build/mpv.app"
+
+      (bin/"mpv").write <<~EOS
+        #!/bin/bash
+        exec "#{prefix}/mpv.app/Contents/MacOS/mpv" "$@"
+      EOS
+      chmod "+x", bin/"mpv"
+
+    else
+      system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
+      system Formula["python@3.9"].opt_bin/"python3", "TOOLS/osxbundle.py", "build/mpv"
+
+      prefix.install "build/mpv.app"
+    end
   end
 
   test do
