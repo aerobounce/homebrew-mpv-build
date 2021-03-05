@@ -10,10 +10,14 @@
     - `disable-binary-install`
 - Removed Arguments
     - `--enable-html-build`
+- Offers `mpv-alt` which depends on `homebrew-ffmpeg/ffmpeg/ffmpeg`
+    - The only difference is `ffmpeg` dependency, options and commands remains the same
 
 ### Install
 ```sh
 brew install aerobounce/mpv-build/mpv
+# OR
+brew install aerobounce/mpv-build/mpv-alt
 ```
 
 ### Install with options
