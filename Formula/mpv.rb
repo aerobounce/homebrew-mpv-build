@@ -7,8 +7,6 @@ class Mpv < Formula
   license :cannot_represent
   head "https://github.com/mpv-player/mpv.git"
 
-  bottle :unneeded
-
   option "with-disable-macos-touchbar", "disable macOS Touch Bar support"
   option "with-disable-macos-media-player", "disable macOS Media Player support"
   option "with-disable-binary-install", "mpv.app will only be installed"
