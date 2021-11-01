@@ -1,9 +1,9 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.33.1.tar.gz"
-  version "0.33.1-build"
-  sha256 "100a116b9f23bdcda3a596e9f26be3a69f166a4f1d00910d1789b6571c46f3a9"
+  url "https://github.com/mpv-player/mpv/archive/v0.34.0.tar.gz"
+  version "0.34.0-build"
+  sha256 "f654fb6275e5178f57e055d20918d7d34e19949bc98ebbf4a7371902e88ce309"
   license :cannot_represent
   head "https://github.com/mpv-player/mpv.git"
 
@@ -25,7 +25,7 @@ class Mpv < Formula
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
-  depends_on "youtube-dl"
+  depends_on "yt-dlp"
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
